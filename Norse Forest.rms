@@ -21,26 +21,24 @@ start_random
 end_random
 
 if SUMMER_MAP
-	#const VEGETATION	19	   		/*PINE_FOREST*/
-	#const GROUND		0 			/*GRASS*/
-	#const TREE		350 			/*PINETREE*/
+	#const VEGETATION	19	   	/*PINE_FOREST*/
+	#const GROUND		0 		/*GRASS*/
+	#const TREE		350 		/*PINETREE*/
 elseif SPRING_MAP
-	#const VEGETATION 	21 			/*SNOW_FOREST*/
-	#const GROUND		34 			/*GRASS_SNOW*/
-	#const TREE		413			/*SNOWPINETREE*/
+	#const VEGETATION 	21 		/*SNOW_FOREST*/
+	#const GROUND		34 		/*GRASS_SNOW*/
+	#const TREE		413		/*SNOWPINETREE*/
 elseif AUTUMN_MAP
-	#const VEGETATION	19			/*PINE_FOREST*/
-	#const GROUND		5 			/*LEAVES*/
-	#const TREE		350	 		/*PINETREE*/
+	#const VEGETATION	19		/*PINE_FOREST*/
+	#const GROUND		5 		/*LEAVES*/
+	#const TREE		350	 	/*PINETREE*/
 else
-	#const VEGETATION 	21 			/*SNOW_FOREST*/
-	#const GROUND		32 			/*SNOW*/
-	#const TREE		413	 		/*SNOWPINETREE*/
+	#const VEGETATION 	21 		/*SNOW_FOREST*/
+	#const GROUND		32 		/*SNOW*/
+	#const TREE		413	 	/*SNOWPINETREE*/
 endif
 
-#const ROADS 25         /*ROAD2*/
-#const ROAD_SNOWY 38
-#const ROAD_FUNGUS 39
+#const ROADS 25
 
 <LAND_GENERATION>
 
@@ -84,7 +82,6 @@ create_terrain VEGETATION
 	number_of_clumps               			24
 	set_avoid_player_start_areas 
 }
-
 
 create_terrain GROUND 
 {
@@ -171,8 +168,6 @@ if LUDIKRIS_MAP
 	}
 endif
  
-/*** REGICIDE GAME *****************************/
-
 if REGICIDE
 	create_object 				VILLAGER
 	{
@@ -196,8 +191,6 @@ if REGICIDE
 	  max_distance_to_players    		10
 	}
 endif
-
-/***********************************************/
 
 /* MAIN FORAGE */
 
@@ -341,7 +334,6 @@ create_object					BOAR
 	max_distance_to_players    		22
 }
 
-
 create_object					BOAR
 {
 	number_of_objects          		1
@@ -351,7 +343,6 @@ create_object					BOAR
 	max_distance_to_players    		22
 }
 
-
 create_object					DLC_BEAR
 {
 	number_of_objects          		2
@@ -360,8 +351,6 @@ create_object					DLC_BEAR
 	min_distance_to_players    		30
 	max_distance_to_players    		40
 }
-
-/********** RESOURCES BY MAP SIZE ****************************/
 
 if LARGE_MAP
 	create_object       			FORAGE
@@ -590,9 +579,6 @@ if MEDIUM_MAP
 	}
 endif
 
-
-/*************************************************************/
-
 /* NEAR TREES */
 
 create_object				TREE
@@ -637,7 +623,6 @@ create_object 				DLC_BEAR
 	min_distance_to_players    	40
 	max_distance_to_players    	120
 } 
-
 
 create_object 				BOAR
 {
@@ -699,7 +684,7 @@ create_connect_teams_lands
 	replace_terrain DLC_WATER5    	SHALLOW
 	replace_terrain MED_WATER     	SHALLOW
 
-	replace_terrain PALM_DESERT   DESERT
+	replace_terrain PALM_DESERT	DESERT
 
 	terrain_cost    WATER			7
 	terrain_cost    DLC_WATER5		7
@@ -707,8 +692,8 @@ create_connect_teams_lands
 	terrain_cost    ICE			7
 	terrain_cost    VEGETATION   		7
 	terrain_cost    PINE_FOREST		7
-	terrain_cost    GROUND        		2
 	terrain_cost    BEACH        		4
+	terrain_cost    GROUND        		2
 	terrain_cost    ROADS         		1
 
 	terrain_size    WATER         		2       1
