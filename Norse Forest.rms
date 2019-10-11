@@ -23,38 +23,37 @@ end_random
 if SUMMER_MAP
 	#const VEGETATION	19	   	/*PINE_FOREST*/
 	#const GROUND		0 		/*GRASS*/
-	#const TREE		350 		/*PINETREE*/
+	#const TREE			350		/*PINETREE*/
 elseif SPRING_MAP
 	#const VEGETATION 	21 		/*SNOW_FOREST*/
 	#const GROUND		34 		/*GRASS_SNOW*/
-	#const TREE		413		/*SNOWPINETREE*/
+	#const TREE			413		/*SNOWPINETREE*/
 elseif AUTUMN_MAP
 	#const VEGETATION	19		/*PINE_FOREST*/
 	#const GROUND		5 		/*LEAVES*/
-	#const TREE		350	 	/*PINETREE*/
+	#const TREE			350	 	/*PINETREE*/
 else
 	#const VEGETATION 	21 		/*SNOW_FOREST*/
 	#const GROUND		32 		/*SNOW*/
-	#const TREE		413	 	/*SNOWPINETREE*/
+	#const TREE			413	 	/*SNOWPINETREE*/
 endif
 
-#const ROADS 25
+#const ROADS 25					/*ROAD2*/
 
 <LAND_GENERATION>
 
-base_terrain VEGETATION
+base_terrain 						VEGETATION
 create_player_lands 
 {
-
 	terrain_type					GROUND
 	land_percent					50
-	base_size					13
-	other_zone_avoidance_distance 			6
+	base_size						13
+	other_zone_avoidance_distance 	6
 }
 
 <ELEVATION_GENERATION>
 
-create_elevation 4
+create_elevation 					4
 {
 	base_terrain					GROUND
 	number_of_clumps 				10
@@ -64,11 +63,11 @@ create_elevation 4
 
 <ELEVATION_GENERATION>
 
-create_elevation 7
+create_elevation					7
 {
 	base_terrain					TREE
 	number_of_clumps 				7
-	number_of_tiles       				4300
+	number_of_tiles       			4300
 	set_scale_by_groups           
 }
 
@@ -76,125 +75,125 @@ create_elevation 7
 
 create_terrain VEGETATION
 {
-	base_terrain GROUND
-	spacing_to_other_terrain_types 			5
-	land_percent                   			20
-	number_of_clumps               			24
+	base_terrain					GROUND
+	spacing_to_other_terrain_types 	5
+	land_percent                   	20
+	number_of_clumps               	24
 	set_avoid_player_start_areas 
 }
 
-create_terrain GROUND 
+create_terrain						GROUND 
 {
-	base_terrain VEGETATION
+	base_terrain					VEGETATION
 	spacing_to_other_terrain_types 	1
 	land_percent                   	7
 	number_of_clumps               	9
 	set_avoid_player_start_areas     
 }
 
-create_terrain GROUND
+create_terrain						GROUND
 {
 	base_terrain					GROUND
 	endif
-	number_of_clumps               			40
-	spacing_to_other_terrain_types 			1
-	land_percent                   			3	
+	number_of_clumps               	40
+	spacing_to_other_terrain_types 	1
+	land_percent                   	3	
 	set_scale_by_size
 }
 
 if WINTER_MAP
-	create_terrain	ICE
+	create_terrain					ICE
 else
-	create_terrain	WATER
+	create_terrain					WATER
 endif
-create_terrain LAKE
+create_terrain						LAKE
 {
 	base_terrain					GROUND
-	spacing_to_other_terrain_types 			1
-	land_percent                   			1
-	number_of_clumps               			4
+	spacing_to_other_terrain_types 	1
+	land_percent                   	1
+	number_of_clumps               	4
 	set_avoid_player_start_areas
 	set_flat_terrain_only     
 }
 
-create_terrain MED_WATER
+create_terrain						MED_WATER
 {
-	base_terrain                   			WATER
-	spacing_to_other_terrain_types 			2
-	land_percent                   			1
-	number_of_clumps               			4
+	base_terrain                   	WATER
+	spacing_to_other_terrain_types 	2
+	land_percent                   	1
+	number_of_clumps               	4
 	set_avoid_player_start_areas
 	set_flat_terrain_only     
 }
 
 <OBJECTS_GENERATION>
 
-create_object TOWN_CENTER
+create_object						TOWN_CENTER
 {
 	set_place_for_every_player
-	group_placement_radius     			18
-	min_distance_to_players    			0
-	max_distance_to_players    			0
+	group_placement_radius     		18
+	min_distance_to_players    		0
+	max_distance_to_players    		0
 }
 
-create_object VILLAGER
+create_object						VILLAGER
 {
 	set_place_for_every_player
-	min_distance_to_players       			6
-	max_distance_to_players       			6
+	min_distance_to_players       	6
+	max_distance_to_players       	6
 }
 
-create_object SCOUT
+create_object						SCOUT
 {
-	number_of_objects             			1
+	number_of_objects             	1
 	set_place_for_every_player
-	min_distance_to_players       			7
-	max_distance_to_players       			9
+	min_distance_to_players       	7
+	max_distance_to_players       	9
 }
 
 if LUDIKRIS_MAP
-	create_object RELIC
+	create_object							RELIC
 	{
-		number_of_objects			250
-		min_distance_to_players			25
+		number_of_objects					250
+		min_distance_to_players				25
 		temp_min_distance_group_placement	110
 	}
-	else
-	create_object RELIC
+else
+	create_object							RELIC
 	{
-		number_of_objects			5
-		min_distance_to_players			25
+		number_of_objects					5
+		min_distance_to_players				25
 		temp_min_distance_group_placement	20
 	}
 endif
  
 if REGICIDE
-	create_object 				VILLAGER
+	create_object					VILLAGER
 	{
 	  number_of_objects        		7
 	  set_place_for_every_player
 	  min_distance_to_players		6
-	  max_distance_to_players       	6
+	  max_distance_to_players       6
 	}
 
-	create_object				KING
+	create_object					KING
 	{
 	  set_place_for_every_player
-	  min_distance_to_players       	6
-	  max_distance_to_players       	6
+	  min_distance_to_players       6
+	  max_distance_to_players       6
 	}
 
-	create_object 				CASTLE
+	create_object					CASTLE
 	{
 	  set_place_for_every_player
-	  min_distance_to_players    		10
-	  max_distance_to_players    		10
+	  min_distance_to_players    	10
+	  max_distance_to_players    	10
 	}
 endif
 
 /* MAIN FORAGE */
 
-create_object 					FORAGE
+create_object						FORAGE
 {
 	number_of_objects          		6
 	group_placement_radius     		3
@@ -203,12 +202,12 @@ create_object 					FORAGE
 	set_place_for_every_player
 	min_distance_to_players    		10
 	max_distance_to_players    		12
-	min_distance_group_placement  		6
+	min_distance_group_placement  	6
 }
 
 /* MAIN GOLD */
 
-create_object 					GOLD
+create_object						GOLD
 {
 	number_of_objects          		7
 	group_placement_radius     		3
@@ -217,13 +216,13 @@ create_object 					GOLD
 	set_place_for_every_player
 	min_distance_to_players    		12
 	max_distance_to_players    		16
-	min_distance_group_placement  		7
-	max_distance_to_other_zones  		7
+	min_distance_group_placement  	7
+	max_distance_to_other_zones  	7
 }
 
 /* SECONDARY GOLD */
 
-create_object 					GOLD
+create_object 						GOLD
 {
 	number_of_objects          		4
 	group_placement_radius     		3	
@@ -232,13 +231,13 @@ create_object 					GOLD
 	set_place_for_every_player
 	min_distance_to_players    		18
 	max_distance_to_players    		26
-	min_distance_group_placement  		7
-	max_distance_to_other_zones  		7
+	min_distance_group_placement  	7
+	max_distance_to_other_zones  	7
 }
 
 /* NEUTRAL GOLD */
 
-create_object 					GOLD
+create_object 						GOLD
 {
 	number_of_objects          		4
 	group_placement_radius     		3
@@ -247,13 +246,13 @@ create_object 					GOLD
 	set_place_for_every_player
 	min_distance_to_players    		25
 	max_distance_to_players    		35
-	min_distance_group_placement  		7
-	max_distance_to_other_zones  		7
+	min_distance_group_placement  	7
+	max_distance_to_other_zones  	7
 }
 
 /* MAIN STONE */
 
-create_object 					STONE
+create_object						STONE
 {
 	number_of_objects          		5
 	group_placement_radius     		2  
@@ -262,13 +261,13 @@ create_object 					STONE
 	set_place_for_every_player
 	min_distance_to_players    		14
 	max_distance_to_players    		18
-	min_distance_group_placement  		7
-	max_distance_to_other_zones  		7
+	min_distance_group_placement  	7
+	max_distance_to_other_zones  	7
 }
 
 /* NEUTRAL STONE */
 
-create_object 					STONE
+create_object						STONE
 {
 	number_of_objects          		4
 	group_placement_radius     		2  
@@ -277,11 +276,11 @@ create_object 					STONE
 	set_place_for_every_player
 	min_distance_to_players    		20
 	max_distance_to_players    		26
-	min_distance_group_placement  		7
-	max_distance_to_other_zones  		7
+	min_distance_group_placement  	7
+	max_distance_to_other_zones  	7
 }
 
-create_object		      			SHEEP
+create_object						SHEEP
 {
 	number_of_objects 4
 	set_loose_grouping
@@ -291,7 +290,7 @@ create_object		      			SHEEP
 	max_distance_to_players    		12
 }
 
-create_object		      			SHEEP
+create_object						SHEEP
 {
 	number_of_objects 2
 	number_of_groups  2
@@ -302,29 +301,29 @@ create_object		      			SHEEP
 	max_distance_to_players    		30
 }
 
-create_object					DEER
+create_object						DEER
 {
 	start_random
-	percent_chance 50
-		number_of_objects 4
-	percent_chance 50
-		number_of_objects 3
+	percent_chance 					50
+		number_of_objects 			4
+	percent_chance 					50
+		number_of_objects 			3
 	end_random
-		group_placement_radius 3
+		group_placement_radius 		3
 		set_loose_grouping
 		set_gaia_object_only
 		set_place_for_every_player
 	start_random
-	percent_chance 50
-		min_distance_to_players	14
-		max_distance_to_players	22
-	percent_chance 50
-		min_distance_to_players	23
-		max_distance_to_players	30
+	percent_chance 					50
+		min_distance_to_players		14
+		max_distance_to_players		22
+	percent_chance 					50
+		min_distance_to_players		23
+		max_distance_to_players		30
 	end_random
 }
 
-create_object					BOAR
+create_object						BOAR
 {
 	number_of_objects          		1
 	set_loose_grouping  
@@ -334,7 +333,7 @@ create_object					BOAR
 	max_distance_to_players    		22
 }
 
-create_object					BOAR
+create_object						BOAR
 {
 	number_of_objects          		1
 	set_gaia_object_only
@@ -343,7 +342,7 @@ create_object					BOAR
 	max_distance_to_players    		22
 }
 
-create_object					DLC_BEAR
+create_object						DLC_BEAR
 {
 	number_of_objects          		2
 	set_gaia_object_only
@@ -353,11 +352,11 @@ create_object					DLC_BEAR
 }
 
 if LARGE_MAP
-	create_object       			FORAGE
+	create_object						FORAGE
 	{
-		number_of_groups           	1    
-		number_of_objects          	5
-		group_placement_radius     	3
+		number_of_groups           		1    
+		number_of_objects          		5
+		group_placement_radius     		3
 		set_tight_grouping
 		set_gaia_object_only
 		min_distance_to_players       	40
@@ -365,7 +364,7 @@ if LARGE_MAP
 		min_distance_group_placement  	9
 	}
 
-	create_object         			GOLD
+	create_object						GOLD
 	{
 		number_of_groups              	3    
 		number_of_objects             	3
@@ -377,7 +376,7 @@ if LARGE_MAP
 		min_distance_group_placement    9
 	}
 
-	create_object       STONE
+	create_object						STONE
 	{
 		number_of_groups              	3    
 		number_of_objects            	4
@@ -391,11 +390,11 @@ if LARGE_MAP
 endif
 
 if HUGE_MAP
-	create_object       			FORAGE
+	create_object						FORAGE
 	{
-		number_of_groups           	2    
-		number_of_objects          	5
-		group_placement_radius     	3
+		number_of_groups           		2    
+		number_of_objects          		5
+		group_placement_radius     		3
 		set_tight_grouping
 		set_gaia_object_only
 		min_distance_to_players       	40
@@ -403,7 +402,7 @@ if HUGE_MAP
 		min_distance_group_placement  	9
 	}
 
-	create_object         			GOLD
+	create_object						GOLD
 	{
 		number_of_groups              	4    
 		number_of_objects             	4
@@ -415,10 +414,10 @@ if HUGE_MAP
 		min_distance_group_placement    9
 	}
 
-	create_object         			STONE
+	create_object						STONE
 	{
 		number_of_groups              	4    
-		number_of_objects       	4
+		number_of_objects       		4
 		group_variance                	1
 		group_placement_radius        	2
 		set_tight_grouping
@@ -429,11 +428,11 @@ if HUGE_MAP
 endif
 
 if GIGANTIC_MAP
-	create_object       			FORAGE
+	create_object						FORAGE
 	{
-		number_of_groups           	3    
-		number_of_objects          	5
-		group_placement_radius     	3
+		number_of_groups           		3    
+		number_of_objects          		5
+		group_placement_radius     		3
 		set_tight_grouping
 		set_gaia_object_only
 		min_distance_to_players       	40
@@ -441,7 +440,7 @@ if GIGANTIC_MAP
 		min_distance_group_placement  	9
 	}
 
-	create_object         			GOLD
+	create_object						GOLD
 	{
 		number_of_groups              	5    
 		number_of_objects             	4
@@ -449,11 +448,11 @@ if GIGANTIC_MAP
 		group_placement_radius        	2
 		set_tight_grouping
 		set_gaia_object_only
-		min_distance_to_players		40
+		min_distance_to_players			40
 		min_distance_group_placement    9
 	}
 
-	create_object         			STONE
+	create_object						STONE
 	{
 		number_of_groups              	5    
 		number_of_objects             	4
@@ -467,18 +466,18 @@ if GIGANTIC_MAP
 endif
 
 if LUDIKRIS_MAP
-	create_object       			  	FORAGE
+	create_object							FORAGE
 	{
-		number_of_groups           	  	12    
-		number_of_objects          	  	5
-		group_placement_radius     	  	3
+		number_of_groups           	  		12    
+		number_of_objects          	  		5
+		group_placement_radius     	  		3
 		min_distance_to_players       	  	40
 		set_tight_grouping
 		set_gaia_object_only
 		temp_min_distance_group_placement 	15
 	}
 
-	create_object				  	GOLD
+	create_object							GOLD
 	{
 		number_of_groups              	  	250
 		number_of_objects             	  	4
@@ -490,7 +489,7 @@ if LUDIKRIS_MAP
 		temp_min_distance_group_placement 	44
 	}
 
-	create_object         		      		STONE
+	create_object							STONE
 	{
 		number_of_groups              		250
 		number_of_objects            		4
@@ -498,24 +497,24 @@ if LUDIKRIS_MAP
 		group_placement_radius        		2
 		set_tight_grouping
 		set_gaia_object_only
-		min_distance_to_players			40
+		min_distance_to_players				40
 		temp_min_distance_group_placement	44
 	}
 endif
 
 if TINY_MAP
-	create_object 					GOLD
+	create_object						GOLD
 	{
 		number_of_groups           		2    
 		number_of_objects          		3
 		group_placement_radius     		2
 		set_tight_grouping
 		set_gaia_object_only
-		min_distance_to_players       		40
-		min_distance_group_placement  		9
+		min_distance_to_players       	40
+		min_distance_group_placement  	9
 	}
 
-	create_object       			STONE
+	create_object						STONE
 	{
 		number_of_groups              	1    
 		number_of_objects             	4
@@ -529,18 +528,18 @@ if TINY_MAP
 endif
 
 if SMALL_MAP
-	create_object 				GOLD
+	create_object						GOLD
 	{
-		number_of_groups           	2    
-		number_of_objects          	3
-		group_placement_radius     	2
+		number_of_groups           		2    
+		number_of_objects          		3
+		group_placement_radius     		2
 		set_tight_grouping
 		set_gaia_object_only
 		min_distance_to_players       	40
 		min_distance_group_placement  	9
 	}
 
-	create_object				STONE
+	create_object						STONE
 	{
 		number_of_groups              	1    
 		number_of_objects            	4
@@ -554,19 +553,19 @@ if SMALL_MAP
 endif
 
 if MEDIUM_MAP
-	create_object 				GOLD
+	create_object						GOLD
 	{
-		number_of_groups           	3    
-		number_of_objects          	3
-		group_variance             	1
-		group_placement_radius     	2
+		number_of_groups           		3    
+		number_of_objects          		3
+		group_variance             		1
+		group_placement_radius     		2
 		set_tight_grouping
 		set_gaia_object_only
-		min_distance_to_players       	40
+		min_distance_to_players			40
 		min_distance_group_placement  	9
 	}
 
-	create_object         			STONE
+	create_object						STONE
 	{
 		number_of_groups              	2    
 		number_of_objects             	4
@@ -581,7 +580,7 @@ endif
 
 /* NEAR TREES */
 
-create_object				TREE
+create_object						TREE
 {
 	number_of_objects             	2
 	set_gaia_object_only
@@ -591,7 +590,7 @@ create_object				TREE
 	min_distance_group_placement  	2
 }
 
-create_object				TREE
+create_object						TREE
 {
 	number_of_objects             	3
 	set_gaia_object_only
@@ -601,41 +600,41 @@ create_object				TREE
 	min_distance_group_placement  	2
 }
 
-create_object				HAWK
+create_object						HAWK
 {
-	number_of_objects         	6
+	number_of_objects         		6
 	set_scaling_to_map_size
 }
 
-create_object 				DLC_BEAR
+create_object 						DLC_BEAR
 {
-	number_of_groups		3
+	number_of_groups				3
 	set_loose_grouping
 	start_random
-	percent_chance 			75
-		number_of_objects 	1
-	percent_chance 			25
-		number_of_objects 	2
+	percent_chance 					75
+		number_of_objects 			1
+	percent_chance 					25
+		number_of_objects 			2
 	end_random
 	set_scaling_to_map_size
 	set_gaia_object_only
 	min_distance_group_placement 	12
-	min_distance_to_players    	40
-	max_distance_to_players    	120
+	min_distance_to_players    		40
+	max_distance_to_players    		120
 } 
 
-create_object 				BOAR
+create_object						BOAR
 {
-	number_of_objects 		3
-	group_variance    		1
+	number_of_objects 				3
+	group_variance    				1
 	set_loose_grouping
 	set_gaia_object_only
 	set_place_for_every_player
-	min_distance_to_players    	35
+	min_distance_to_players    		35
 	min_distance_group_placement  	5
 }
 
-create_object				TREE
+create_object						TREE
 {
 	number_of_objects             	100
 	set_gaia_object_only
@@ -643,9 +642,9 @@ create_object				TREE
 	min_distance_group_placement  	2
 }
 
-create_object SHORE_FISH
+create_object						SHORE_FISH
 {
-	number_of_objects          	3
+	number_of_objects				3
 	set_gaia_object_only
 	set_scaling_to_map_size
 }
@@ -658,28 +657,29 @@ create_connect_all_players_land
 	replace_terrain GROUND         	GROUND
 	replace_terrain WATER         	SHALLOW
 	replace_terrain DEEP_WATER    	SHALLOW
-	replace_terrain WATER		SHALLOW
+	replace_terrain WATER			SHALLOW
 
 	terrain_cost    GROUND         	1
 	terrain_cost    VEGETATION      2
 	terrain_cost    BEACH         	4
-	terrain_cost    WATER		5
-	terrain_cost    ICE		5 
+	terrain_cost    WATER			5
+	terrain_cost    ICE				5 
 	terrain_cost    MED_WATER     	7
 
 	terrain_size    WATER         	2       1
-	terrain_size    DLC_WATER5	2       1
+	terrain_size    DLC_WATER5		2       1
 	terrain_size    ICE           	2       1
 	terrain_size    MED_WATER     	2       1
+	
 	terrain_size    GROUND         	0       0
 	terrain_size    VEGETATION      3       1
-	terrain_size    ROADS		10      8
+	terrain_size    ROADS			10      8
 }
 
 create_connect_teams_lands
 {
 	replace_terrain VEGETATION    	ROADS
-	replace_terrain	GROUND		ROADS
+	replace_terrain	GROUND			ROADS
 	replace_terrain WATER         	SHALLOW
 	replace_terrain DLC_WATER5    	SHALLOW
 	replace_terrain MED_WATER     	SHALLOW
@@ -689,17 +689,17 @@ create_connect_teams_lands
 	terrain_cost    WATER			7
 	terrain_cost    DLC_WATER5		7
 	terrain_cost    MED_WATER		7 
-	terrain_cost    ICE			7
-	terrain_cost    VEGETATION   		7
+	terrain_cost    ICE				7
+	terrain_cost    VEGETATION   	7
 	terrain_cost    PINE_FOREST		7
-	terrain_cost    BEACH        		4
-	terrain_cost    GROUND        		2
-	terrain_cost    ROADS         		1
+	terrain_cost    BEACH        	4
+	terrain_cost    GROUND        	2
+	terrain_cost    ROADS         	1
 
-	terrain_size    WATER         		2       1
-	terrain_size    DLC_WATER5    		2       1
-	terrain_size    MED_WATER    		2       1
-	terrain_size    ICE          		2       1
-	terrain_size    GROUND         		1       0
-	terrain_size    ROADS         	      	0       0
+	terrain_size    WATER         	2       1
+	terrain_size    DLC_WATER5    	2       1
+	terrain_size    MED_WATER    	2       1
+	terrain_size    ICE          	2       1
+	terrain_size    GROUND         	1       0
+	terrain_size    ROADS         	0       0
 }
