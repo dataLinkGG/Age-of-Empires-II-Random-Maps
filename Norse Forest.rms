@@ -23,19 +23,19 @@ end_random
 if SUMMER_MAP
 	#const VEGETATION	19	   	/*PINE_FOREST*/
 	#const GROUND		0 		/*GRASS*/
-	#const TREE			350		/*PINETREE*/
+	#const TREE		350		/*PINETREE*/
 elseif SPRING_MAP
 	#const VEGETATION 	21 		/*SNOW_FOREST*/
 	#const GROUND		34 		/*GRASS_SNOW*/
-	#const TREE			413		/*SNOWPINETREE*/
+	#const TREE		413		/*SNOWPINETREE*/
 elseif AUTUMN_MAP
 	#const VEGETATION	19		/*PINE_FOREST*/
 	#const GROUND		5 		/*LEAVES*/
-	#const TREE			350	 	/*PINETREE*/
+	#const TREE		350	 	/*PINETREE*/
 else
 	#const VEGETATION 	21 		/*SNOW_FOREST*/
 	#const GROUND		32 		/*SNOW*/
-	#const TREE			413	 	/*SNOWPINETREE*/
+	#const TREE		413	 	/*SNOWPINETREE*/
 endif
 
 #const ROADS 25					/*ROAD2*/
@@ -47,8 +47,8 @@ create_player_lands
 {
 	terrain_type					GROUND
 	land_percent					50
-	base_size						13
-	other_zone_avoidance_distance 	6
+	base_size					13
+	other_zone_avoidance_distance			6
 }
 
 <ELEVATION_GENERATION>
