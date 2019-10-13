@@ -55,26 +55,6 @@ create_player_lands
 	other_zone_avoidance_distance	6
 }
 
-<ELEVATION_GENERATION>
-
-create_elevation 					4
-{
-	base_terrain					GROUND
-	number_of_clumps 				10
-	number_of_tiles 				700
-	set_scale_by_groups           
-}
-
-<ELEVATION_GENERATION>
-
-create_elevation					7
-{
-	base_terrain					TREE
-	number_of_clumps 				7
-	number_of_tiles       			4300
-	set_scale_by_groups           
-}
-
 <TERRAIN_GENERATION> 
 
 create_terrain VEGETATION
@@ -651,6 +631,26 @@ create_object						SHORE_FISH
 	number_of_objects				3
 	set_gaia_object_only
 	set_scaling_to_map_size
+}
+
+<ELEVATION_GENERATION>
+
+create_elevation 					4
+{
+	base_terrain					GROUND
+	number_of_clumps 				10
+	number_of_tiles 				700
+	set_scale_by_groups           
+}
+
+<ELEVATION_GENERATION>
+
+create_elevation					7
+{
+	base_terrain					VEGETATION
+	number_of_clumps 				7
+	number_of_tiles       			4300
+	set_scale_by_groups           
 }
 
 <CONNECTION_GENERATION>
