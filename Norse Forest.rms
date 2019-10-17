@@ -90,7 +90,6 @@ if WINTER_MAP
 else
 	create_terrain					WATER
 endif
-create_terrain						LAKE
 {
 	base_terrain					GROUND
 	spacing_to_other_terrain_types 	1
