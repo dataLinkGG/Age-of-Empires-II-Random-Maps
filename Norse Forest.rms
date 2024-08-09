@@ -23,26 +23,26 @@ end_random
 if SUMMER_MAP
 	#const VEGETATION	19	   	/*PINE_FOREST*/
 	#const GROUND		0 		/*GRASS*/
-	#const TREE			350		/*PINETREE*/
+	#const TREE		350		/*PINETREE*/
 elseif SPRING_MAP
 	#const VEGETATION 	21 		/*SNOW_FOREST*/
 	#const GROUND		34 		/*GRASS_SNOW*/
-	#const TREE			413		/*SNOWPINETREE*/
+	#const TREE		413		/*SNOWPINETREE*/
 elseif AUTUMN_MAP
 	#const VEGETATION	19		/*PINE_FOREST*/
 	#const GROUND		5 		/*LEAVES*/
-	#const TREE			350	 	/*PINETREE*/
+	#const TREE		350	 	/*PINETREE*/
 else
 	#const VEGETATION 	21 		/*SNOW_FOREST*/
 	#const GROUND		32 		/*SNOW*/
-	#const TREE			413	 	/*SNOWPINETREE*/
+	#const TREE		413	 	/*SNOWPINETREE*/
 endif
 
 #const FRIENDLY_HUNTABLE	65		/*DEER*/
 #const AGGRESSIVE_HUNTABLE	48		/*WILD_BOAR*/
 #const HERDABLE_ANIMAL		705		/*DLC_COW*/
-#const WILD_ANIMAL			486 	/*DLC_BEAR*/
-#const ROADS 				25		/*ROAD2*/
+#const WILD_ANIMAL		486 		/*DLC_BEAR*/
+#const ROADS 			25		/*ROAD2*/
 
 <LAND_GENERATION>
 
@@ -138,45 +138,45 @@ if LUDIKRIS_MAP
 	create_object							RELIC
 	{
 		number_of_objects					250
-		min_distance_to_players				25
-		temp_min_distance_group_placement	110
+		min_distance_to_players					25
+		temp_min_distance_group_placement			110
 	}
 else
 	create_object							RELIC
 	{
 		number_of_objects					5
-		min_distance_to_players				25
-		temp_min_distance_group_placement	20
+		min_distance_to_players					25
+		temp_min_distance_group_placement			20
 	}
 endif
  
 if REGICIDE
-	create_object							VILLAGER
+	create_object						VILLAGER
 	{
 	  number_of_objects        				7
 	  set_place_for_every_player
 	  min_distance_to_players				6
-	  max_distance_to_players       		6
+	  max_distance_to_players       			6
 	}
 
-	create_object							KING
+	create_object						KING
 	{
 	  set_place_for_every_player
-	  min_distance_to_players       		6
-	  max_distance_to_players       		6
+	  min_distance_to_players       			6
+	  max_distance_to_players       			6
 	}
 
-	create_object							CASTLE
+	create_object						CASTLE
 	{
 	  set_place_for_every_player
-	  min_distance_to_players    			10
-	  max_distance_to_players    			10
+	  min_distance_to_players    				10
+	  max_distance_to_players    				10
 	}
 endif
 
 /* MAIN FORAGE */
 
-create_object						FORAGE
+create_object					FORAGE
 {
 	number_of_objects          		6
 	group_placement_radius     		3
@@ -185,12 +185,12 @@ create_object						FORAGE
 	set_place_for_every_player
 	min_distance_to_players    		10
 	max_distance_to_players    		12
-	min_distance_group_placement  	6
+	min_distance_group_placement  		6
 }
 
 /* MAIN GOLD */
 
-create_object						GOLD
+create_object					GOLD
 {
 	number_of_objects          		7
 	group_placement_radius     		3
@@ -199,13 +199,13 @@ create_object						GOLD
 	set_place_for_every_player
 	min_distance_to_players    		12
 	max_distance_to_players    		16
-	min_distance_group_placement  	7
-	max_distance_to_other_zones  	7
+	min_distance_group_placement  		7
+	max_distance_to_other_zones  		7
 }
 
 /* SECONDARY GOLD */
 
-create_object 						GOLD
+create_object 					GOLD
 {
 	number_of_objects          		4
 	group_placement_radius     		3	
@@ -214,13 +214,13 @@ create_object 						GOLD
 	set_place_for_every_player
 	min_distance_to_players    		18
 	max_distance_to_players    		26
-	min_distance_group_placement  	7
-	max_distance_to_other_zones  	7
+	min_distance_group_placement  		7
+	max_distance_to_other_zones  		7
 }
 
 /* NEUTRAL GOLD */
 
-create_object 						GOLD
+create_object 					GOLD
 {
 	number_of_objects          		4
 	group_placement_radius     		3
@@ -229,13 +229,13 @@ create_object 						GOLD
 	set_place_for_every_player
 	min_distance_to_players    		25
 	max_distance_to_players    		35
-	min_distance_group_placement  	7
-	max_distance_to_other_zones  	7
+	min_distance_group_placement  		7
+	max_distance_to_other_zones  		7
 }
 
 /* MAIN STONE */
 
-create_object						STONE
+create_object					STONE
 {
 	number_of_objects          		5
 	group_placement_radius     		2  
@@ -244,13 +244,13 @@ create_object						STONE
 	set_place_for_every_player
 	min_distance_to_players    		14
 	max_distance_to_players    		18
-	min_distance_group_placement  	7
-	max_distance_to_other_zones  	7
+	min_distance_group_placement  		7
+	max_distance_to_other_zones  		7
 }
 
 /* NEUTRAL STONE */
 
-create_object						STONE
+create_object					STONE
 {
 	number_of_objects          		4
 	group_placement_radius     		2  
@@ -259,13 +259,13 @@ create_object						STONE
 	set_place_for_every_player
 	min_distance_to_players    		20
 	max_distance_to_players    		26
-	min_distance_group_placement  	7
-	max_distance_to_other_zones  	7
+	min_distance_group_placement  		7
+	max_distance_to_other_zones  		7
 }
 
-create_object						HERDABLE_ANIMAL
+create_object					HERDABLE_ANIMAL
 {
-	number_of_objects 4
+	number_of_objects 			4
 	set_loose_grouping
 	set_gaia_object_only
 	set_place_for_every_player
@@ -273,10 +273,10 @@ create_object						HERDABLE_ANIMAL
 	max_distance_to_players    		12
 }
 
-create_object						HERDABLE_ANIMAL
+create_object					HERDABLE_ANIMAL
 {
-	number_of_objects 2
-	number_of_groups  2
+	number_of_objects 			2
+	number_of_groups  			2
 	set_loose_grouping
 	set_gaia_object_only
 	set_place_for_every_player
@@ -284,29 +284,29 @@ create_object						HERDABLE_ANIMAL
 	max_distance_to_players    		30
 }
 
-create_object						FRIENDLY_HUNTABLE
+create_object					FRIENDLY_HUNTABLE
 {
 	start_random
-	percent_chance 					50
-		number_of_objects 			4
-	percent_chance 					50
-		number_of_objects 			3
+	percent_chance 				50
+		number_of_objects 		4
+	percent_chance 				50
+		number_of_objects 		3
 	end_random
 		group_placement_radius 		3
 		set_loose_grouping
 		set_gaia_object_only
 		set_place_for_every_player
 	start_random
-	percent_chance 					50
+	percent_chance 				50
 		min_distance_to_players		14
 		max_distance_to_players		22
-	percent_chance 					50
+	percent_chance 				50
 		min_distance_to_players		23
 		max_distance_to_players		30
 	end_random
 }
 
-create_object						AGGRESSIVE_HUNTABLE
+create_object					AGGRESSIVE_HUNTABLE
 {
 	number_of_objects          		1
 	set_loose_grouping  
@@ -316,7 +316,7 @@ create_object						AGGRESSIVE_HUNTABLE
 	max_distance_to_players    		22
 }
 
-create_object						AGGRESSIVE_HUNTABLE
+create_object					AGGRESSIVE_HUNTABLE
 {
 	number_of_objects          		1
 	set_gaia_object_only
@@ -325,7 +325,7 @@ create_object						AGGRESSIVE_HUNTABLE
 	max_distance_to_players    		22
 }
 
-create_object						WILD_ANIMAL
+create_object					WILD_ANIMAL
 {
 	number_of_objects          		2
 	set_gaia_object_only
@@ -335,11 +335,11 @@ create_object						WILD_ANIMAL
 }
 
 if LARGE_MAP
-	create_object						FORAGE
+	create_object				FORAGE
 	{
-		number_of_groups           		1    
-		number_of_objects          		5
-		group_placement_radius     		3
+		number_of_groups           	1    
+		number_of_objects          	5
+		group_placement_radius     	3
 		set_tight_grouping
 		set_gaia_object_only
 		min_distance_to_players       	40
@@ -347,7 +347,7 @@ if LARGE_MAP
 		min_distance_group_placement  	9
 	}
 
-	create_object						GOLD
+	create_object				GOLD
 	{
 		number_of_groups              	3    
 		number_of_objects             	3
@@ -359,7 +359,7 @@ if LARGE_MAP
 		min_distance_group_placement    9
 	}
 
-	create_object						STONE
+	create_object				STONE
 	{
 		number_of_groups              	3    
 		number_of_objects            	4
@@ -373,11 +373,11 @@ if LARGE_MAP
 endif
 
 if HUGE_MAP
-	create_object						FORAGE
+	create_object				FORAGE
 	{
-		number_of_groups           		2    
-		number_of_objects          		5
-		group_placement_radius     		3
+		number_of_groups           	2    
+		number_of_objects          	5
+		group_placement_radius     	3
 		set_tight_grouping
 		set_gaia_object_only
 		min_distance_to_players       	40
@@ -385,7 +385,7 @@ if HUGE_MAP
 		min_distance_group_placement  	9
 	}
 
-	create_object						GOLD
+	create_object				GOLD
 	{
 		number_of_groups              	4    
 		number_of_objects             	4
@@ -397,10 +397,10 @@ if HUGE_MAP
 		min_distance_group_placement    9
 	}
 
-	create_object						STONE
+	create_object				STONE
 	{
 		number_of_groups              	4    
-		number_of_objects       		4
+		number_of_objects       	4
 		group_variance                	1
 		group_placement_radius        	2
 		set_tight_grouping
@@ -411,11 +411,11 @@ if HUGE_MAP
 endif
 
 if GIGANTIC_MAP
-	create_object						FORAGE
+	create_object				FORAGE
 	{
-		number_of_groups           		3    
-		number_of_objects          		5
-		group_placement_radius     		3
+		number_of_groups           	3    
+		number_of_objects          	5
+		group_placement_radius     	3
 		set_tight_grouping
 		set_gaia_object_only
 		min_distance_to_players       	40
@@ -423,7 +423,7 @@ if GIGANTIC_MAP
 		min_distance_group_placement  	9
 	}
 
-	create_object						GOLD
+	create_object				GOLD
 	{
 		number_of_groups              	5    
 		number_of_objects             	4
@@ -431,11 +431,11 @@ if GIGANTIC_MAP
 		group_placement_radius        	2
 		set_tight_grouping
 		set_gaia_object_only
-		min_distance_to_players			40
+		min_distance_to_players		40
 		min_distance_group_placement    9
 	}
 
-	create_object						STONE
+	create_object				STONE
 	{
 		number_of_groups              	5    
 		number_of_objects             	4
@@ -449,18 +449,18 @@ if GIGANTIC_MAP
 endif
 
 if LUDIKRIS_MAP
-	create_object							FORAGE
+	create_object				FORAGE
 	{
-		number_of_groups           	  		12    
-		number_of_objects          	  		5
-		group_placement_radius     	  		3
-		min_distance_to_players       	  	40
+		number_of_groups           	  12    
+		number_of_objects          	  5
+		group_placement_radius     	  3
+		min_distance_to_players       	  40
 		set_tight_grouping
 		set_gaia_object_only
-		temp_min_distance_group_placement 	15
+		temp_min_distance_group_placement 15
 	}
 
-	create_object							GOLD
+	create_object					GOLD
 	{
 		number_of_groups              	  	250
 		number_of_objects             	  	4
@@ -472,7 +472,7 @@ if LUDIKRIS_MAP
 		temp_min_distance_group_placement 	44
 	}
 
-	create_object							STONE
+	create_object					STONE
 	{
 		number_of_groups              		250
 		number_of_objects            		4
@@ -480,24 +480,24 @@ if LUDIKRIS_MAP
 		group_placement_radius        		2
 		set_tight_grouping
 		set_gaia_object_only
-		min_distance_to_players				40
+		min_distance_to_players			40
 		temp_min_distance_group_placement	44
 	}
 endif
 
 if TINY_MAP
-	create_object						GOLD
+	create_object					GOLD
 	{
 		number_of_groups           		2    
 		number_of_objects          		3
 		group_placement_radius     		2
 		set_tight_grouping
 		set_gaia_object_only
-		min_distance_to_players       	40
-		min_distance_group_placement  	9
+		min_distance_to_players       		40
+		min_distance_group_placement  		9
 	}
 
-	create_object						STONE
+	create_object				STONE
 	{
 		number_of_groups              	1    
 		number_of_objects             	4
@@ -511,18 +511,18 @@ if TINY_MAP
 endif
 
 if SMALL_MAP
-	create_object						GOLD
+	create_object				GOLD
 	{
-		number_of_groups           		2    
-		number_of_objects          		3
-		group_placement_radius     		2
+		number_of_groups           	2    
+		number_of_objects          	3
+		group_placement_radius     	2
 		set_tight_grouping
 		set_gaia_object_only
 		min_distance_to_players       	40
 		min_distance_group_placement  	9
 	}
 
-	create_object						STONE
+	create_object				STONE
 	{
 		number_of_groups              	1    
 		number_of_objects            	4
@@ -536,7 +536,7 @@ if SMALL_MAP
 endif
 
 if MEDIUM_MAP
-	create_object						GOLD
+	create_object					GOLD
 	{
 		number_of_groups           		3    
 		number_of_objects          		3
@@ -545,10 +545,10 @@ if MEDIUM_MAP
 		set_tight_grouping
 		set_gaia_object_only
 		min_distance_to_players			40
-		min_distance_group_placement  	9
+		min_distance_group_placement  		9
 	}
 
-	create_object						STONE
+	create_object				STONE
 	{
 		number_of_groups              	2    
 		number_of_objects             	4
@@ -563,7 +563,7 @@ endif
 
 /* NEAR TREES */
 
-create_object						TREE
+create_object				TREE
 {
 	number_of_objects             	2
 	set_gaia_object_only
@@ -573,7 +573,7 @@ create_object						TREE
 	min_distance_group_placement  	2
 }
 
-create_object						TREE
+create_object				TREE
 {
 	number_of_objects             	3
 	set_gaia_object_only
@@ -583,9 +583,9 @@ create_object						TREE
 	min_distance_group_placement  	2
 }
 
-create_object						HAWK
+create_object				HAWK
 {
-	number_of_objects         		6
+	number_of_objects         	6
 	set_scaling_to_map_size
 }
 
@@ -601,9 +601,9 @@ create_object 						WILD_ANIMAL
 	end_random
 	set_scaling_to_map_size
 	set_gaia_object_only
-	min_distance_group_placement 	12
-	min_distance_to_players    		40
-	max_distance_to_players    		120
+	min_distance_group_placement 			12
+	min_distance_to_players    			40
+	max_distance_to_players    			120
 } 
 
 create_object						AGGRESSIVE_HUNTABLE
@@ -613,11 +613,11 @@ create_object						AGGRESSIVE_HUNTABLE
 	set_loose_grouping
 	set_gaia_object_only
 	set_place_for_every_player
-	min_distance_to_players    		35
-	min_distance_group_placement  	5
+	min_distance_to_players    			35
+	min_distance_group_placement  			5
 }
 
-create_object						TREE
+create_object				TREE
 {
 	number_of_objects             	100
 	set_gaia_object_only
